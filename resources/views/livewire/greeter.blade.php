@@ -13,7 +13,7 @@
         @endforeach
       </select>
       <input
-          id="newName"
+          id="name"
           type="text"
           class="block w-80 p-4 border rounded-md bg-gray-700 text-white"
           wire:model="name"
