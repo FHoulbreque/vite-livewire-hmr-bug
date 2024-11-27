@@ -28,7 +28,6 @@
         </header>
 
         <main class="mt-6">
-          <livewire:search />
         </main>
 
       </div>
