@@ -16,7 +16,9 @@ class CreateArticle extends AdminComponent
     {
         $this->form->store();
 
-        $this->redirect('/dashboard/articles', navigate: true);
+        session()->flash('status', 'Article successfully created');
+
+        $this->redirectRoute('dashboard.articles.list', navigate: true);
     }
 
 

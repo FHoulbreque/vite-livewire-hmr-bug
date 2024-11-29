@@ -1,3 +1,1 @@
-<div>
-
-</div>
+<span>{{$this->count}}</span>
