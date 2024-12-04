@@ -24,9 +24,16 @@
                 <li>
                   <a href="/" class="block py-2 px-3 text-blue-500">Home</a>
                 </li>
-                <li>
-                  <a href="/dashboard" class="block py-2 px-3 text-blue-500">Admin Dashboard</a>
-                </li>
+                @auth
+                  <li>
+                    <a href="/dashboard" class="block py-2 px-3 text-blue-500">Admin Dashboard</a>
+                  </li>
+                @endauth
+                @guest
+                  <li>
+                    <a href="/login" class="block py-2 px-3 text-blue-500">Login</a>
+                  </li>
+                @endguest
               </ul>
             </div>
             <livewire:search placeholder="Type something to search" />

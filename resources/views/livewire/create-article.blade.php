@@ -27,6 +27,27 @@
       </div>
     </div>
     <div class="mb-3">
+      <label class="block" for="article-photo">
+        Photo
+      </label>
+      <div class="flex items-center">
+        <input
+            id="article-photo"
+            type="file"
+            wire:model="form.photo"
+        />
+        <div>
+          @if($form->photo)
+            <img src="{{ $form->photo->temporaryUrl() }}" alt="" class="w-1/2" />
+          @endif
+        </div>
+      </div>
+      <div>
+        @error('photo')
+        <span class="text-red-600">{{ $message }}</span> @enderror
+      </div>
+    </div>
+    <div class="mb-3">
       <label class="flex items-center">
         <input type="checkbox"
                name="published"
@@ -49,7 +70,7 @@
             No
           </label>
         </div>
-        <div x-show="$wire.form.allowNotifications">
+        <div x-show="$wire.form.allowNotifications" wire:transition>
           <label for="" class="flex items-center">
             <input type="checkbox" value="email" class="mr-2" wire:model="form.notifications" />
             Email
